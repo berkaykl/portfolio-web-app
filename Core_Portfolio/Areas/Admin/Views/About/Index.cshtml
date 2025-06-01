@@ -1,0 +1,48 @@
+﻿@model EntityLayer.Concrete.About
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Öne Çıkanlar</h4>
+            <p class="card-description">Öne Çıkanlar Düzenleme Formu</p>
+
+            <form asp-controller="About" asp-action="Index" method="post" target="_blank" class="forms-sample">
+                <input type="hidden" asp-for="AboutID" />
+
+                <div class="form-group">
+                    <label asp-for="Title">Başlık</label>
+                    <input asp-for="Title" type="text" class="form-control" placeholder="Başlık giriniz">
+                </div>
+                <div class="form-group">
+                    <label asp-for="Description">Açıklama</label>
+                    <textarea asp-for="Description" type="text" class="form-control" placeholder="Açıklama giriniz" rows="4"></textarea>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Mail">Mail</label>
+                    <input asp-for="Mail" type="text" class="form-control" placeholder="Mail giriniz">
+                </div>
+                <div class="form-group">
+                    <label asp-for="School">Okul</label>
+                    <input asp-for="School" type="text" class="form-control" placeholder="Okul giriniz">
+                </div>
+                <div class="form-group">
+                    <label asp-for="Address">Adres</label>
+                    <input asp-for="Address" type="text" class="form-control" placeholder="Adres giriniz">
+                </div>
+                <div class="form-group">
+                    <label asp-for="ImageUrl">Resim Yolu</label>
+                    <input asp-for="ImageUrl" type="text" class="form-control" placeholder="Resim yolu giriniz">
+                </div>
+
+
+                <button type="submit" class="btn btn-primary mr-2">Güncelle</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/vendors/js/vendor.bundle.base.js"></script>

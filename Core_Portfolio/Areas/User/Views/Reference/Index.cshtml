@@ -1,0 +1,68 @@
+﻿@model Core_Portfolio.Areas.User.Models.UserReferenceViewModel
+
+
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Yaptığım Referanslar</h4>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Yorum</th>
+                            <th>Tarih</th>
+                            <th>Sil</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.MyTestimonials)
+                        {
+                            <tr>
+                                <td style="word-wrap: break-word; white-space: normal; max-width: 250px;">@item.Comment</td>
+                                <td>@item.Date.ToString("dd.MM.yyyy")</td>
+                                <td>
+                                    <form asp-area="User" asp-controller="Reference" asp-action="DeleteReference" asp-route-id="@item.TestimonialID" method="post" style="display:inline;">
+                                        <button type="submit" class="btn btn-outline-danger">Sil</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Referans Ol</h4>
+            <p class="card-description">Bu form üzerinden referans olabilirsiniz</p>
+
+            <form asp-area="User" asp-controller="Reference" asp-action="AddReference" class="forms-sample">
+                <input type="hidden" asp-for="Name" value="@Model.Name" />
+                <input type="hidden" asp-for="Surname" value="@Model.Surname" />
+                <input type="hidden" asp-for="WriterUserId" value="@Model.WriterUserId"/>
+                <input type="hidden" asp-for="ImageUrl" value="/userimage/@Model.ImageUrl" />
+
+                <div class="form-group">
+                    <label for="exampleInputUsername1">Meslek</label>
+                    <input type="text" asp-for="Company" class="form-control" placeholder="Lütfen mesleğinizi giriniz">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Referans Mesajı</label>
+                    <textarea asp-for="Comment" class="form-control" placeholder="Lütfen referans mesajınızı giriniz" rows="4"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary mr-2">Gönder</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,58 @@
+﻿@model EntityLayer.Concrete.Portfolio
+
+@{
+    ViewData["Title"] = "AddPortfolio";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Proje Ekle</h4>
+
+            <form asp-area="Admin" asp-controller="Portfolio" asp-action="AddPortfolio" method="post" class="forms-sample">
+                <div class="form-group">
+                    <label asp-for="Name">Proje Adı</label>
+                    <input asp-for="Name" type="text" class="form-control" placeholder="Proje adını giriniz">
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Date">Tarih</label>
+                    <input asp-for="Date" type="text" class="form-control" placeholder="Tarihi giriniz">
+                    <span asp-validation-for="Date" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ProjectUrl">Proje Linki</label>
+                    <input asp-for="ProjectUrl" type="text" class="form-control" placeholder="Proje linkini giriniz">
+                    <span asp-validation-for="ProjectUrl" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ProjectValue">Tamamlanma Oranı</label>
+                    <input asp-for="ProjectValue" type="text" class="form-control" placeholder="Tamamlanma oranını giriniz">
+                    <span asp-validation-for="ProjectValue" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="ImageUrl2">Büyük Resim Yolu</label>
+                    <input asp-for="ImageUrl2" type="text" class="form-control" placeholder="Büyük resim yolunu giriniz">
+                    <span asp-validation-for="ImageUrl2" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ImageUrl">Küçük Resim Yolu</label>
+                    <input asp-for="ImageUrl" type="text" class="form-control" placeholder="Küçük resim yolunu giriniz">
+                    <span asp-validation-for="ImageUrl" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="IconUrl">Platform İkon Yolu</label>
+                    <input asp-for="IconUrl" type="text" class="form-control" placeholder="Platform ikon yolunu giriniz">
+                    <span asp-validation-for="IconUrl" class="text-danger"></span>
+                </div>
+
+
+                <button type="submit" class="btn btn-primary mr-2">Proje Ekle</button>
+                <button asp-area="Admin" asp-controller="Portfolio" asp-action="Index" class="btn btn-dark">İptal Et</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/vendors/js/vendor.bundle.base.js"></script>

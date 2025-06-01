@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">İletişime Geç</h4>
+            <p class="card-description">Bu form üzerinden iletişime geçebilirsin</p>
+
+            <form class="forms-sample">
+                <div class="form-group">
+                    <label for="exampleInputUsername1">Başlık</label>
+                    <input type="text" name="Title" class="form-control" placeholder="Lütfen mesaj başlığını giriniz">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Mesaj</label>
+                    <textarea name="Content" class="form-control" placeholder="Lütfen mesajınızı giriniz" rows="4"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary mr-2">Gönder</button>
+            </form>
+        </div>
+    </div>
+</div>

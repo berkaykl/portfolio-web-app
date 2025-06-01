@@ -1,0 +1,56 @@
+﻿using Microsoft.EntityFrameworkCore.Migrations;
+
+#nullable disable
+
+namespace DataAccessLayer.Migrations
+{
+    public partial class edit_testimonial2 : Migration
+    {
+        protected override void Up(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.DropForeignKey(
+                name: "FK_Testimonials_AspNetUsers_WriterUserId",
+                table: "Testimonials");
+
+            migrationBuilder.DropIndex(
+                name: "IX_Testimonials_WriterUserId",
+                table: "Testimonials");
+
+            migrationBuilder.DropColumn(
+                name: "Id",
+                table: "Testimonials");
+
+            migrationBuilder.DropColumn(
+                name: "WriterUserId",
+                table: "Testimonials");
+        }
+
+        protected override void Down(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.AddColumn<int>(
+                name: "Id",
+                table: "Testimonials",
+                type: "int",
+                nullable: false,
+                defaultValue: 0);
+
+            migrationBuilder.AddColumn<int>(
+                name: "WriterUserId",
+                table: "Testimonials",
+                type: "int",
+                nullable: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Testimonials_WriterUserId",
+                table: "Testimonials",
+                column: "WriterUserId");
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_Testimonials_AspNetUsers_WriterUserId",
+                table: "Testimonials",
+                column: "WriterUserId",
+                principalTable: "AspNetUsers",
+                principalColumn: "Id");
+        }
+    }
+}

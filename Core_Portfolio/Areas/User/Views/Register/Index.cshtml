@@ -1,0 +1,135 @@
+﻿@using EntityLayer.Concrete
+@model Core_Portfolio.Areas.User.Models.UserRegisterViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Kayıt Ol</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/css/style.css">
+    <!-- End layout styles -->
+    <link rel="shortcut icon" href="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/images/favicon.png" />
+
+    <style>
+        .arkaplanFoto {
+            background: url("https://cdn.discordapp.com/attachments/913942781498630157/1373725860938387516/Login_bg.jpg.jpg?ex=682cc6e7&is=682b7567&hm=5f23e1b1675ce6017c169e4d3bdc18395c1f26826be6979c29ccf3dfed6a341b&") !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-scroller">
+        <div class="container-fluid page-body-wrapper full-page-wrapper">
+            <div class="row w-100 m-0">
+                <div class="arkaplanFoto content-wrapper full-page-wrapper d-flex align-items-center auth login-bg">
+                    <div class="card col-lg-4 mx-auto">
+                        <div class="card-body px-5 py-5">
+                            <h3 class="card-title text-left mb-3">Kayıt Ol</h3>
+                            <form asp-area="User" asp-controller="Register" asp-action="Index" method="post">
+                                @* <div class="form-group">
+                                    <label>Kullanıcı Adı</label>
+                                    <input type="text" class="form-control p_input">
+                                </div> *@
+                                <div class="form-group">
+                                    <label>İsim</label>
+                                    <span asp-validation-for="Name" class="text text-danger"></span>
+                                    <input asp-for="Name" type="text" class="form-control p_input">
+                                </div>
+                                <div class="form-group">
+                                    <label>Soyisim</label>
+                                    <span asp-validation-for="Surname" class="text text-danger"></span>
+                                    <input asp-for="Surname" type="text" class="form-control p_input">
+                                </div>
+                                <div class="form-group">
+                                    <label>Kullanıcı Adı</label>
+                                    <span asp-validation-for="UserName" class="text text-danger"></span>
+                                    <input asp-for="UserName" type="text" class="form-control p_input">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>E-Posta</label>
+                                    <span asp-validation-for="Mail" class="text text-danger"></span>
+                                    <input asp-for="Mail" type="email" class="form-control p_input">
+                                </div>
+                                <div class="form-group">
+                                    <label>Resim Url</label>
+                                    <span asp-validation-for="ImageUrl" class="text text-danger"></span>
+                                    <input asp-for="ImageUrl" type="text" class="form-control p_input">
+                                </div>
+                                <div class="form-group">
+                                    <label>Şifre</label>
+                                    <span asp-validation-for="Password" class="text text-danger"></span>
+                                    <input asp-for="Password" type="password" class="form-control p_input">
+                                </div>
+                                <div class="form-group">
+                                    <label>Şifre Tekrar</label>
+                                    <span asp-validation-for="ConfirmPassword" class="text text-danger"></span>
+                                    <input asp-for="ConfirmPassword" type="password" class="form-control p_input">
+                                </div>
+
+                                @* @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                                {
+                                    <div class="text text-danger">@error.ErrorMessage</div>
+                                } *@
+
+                                @* <div class="form-group d-flex align-items-center justify-content-between">
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input type="checkbox" class="form-check-input"> Beni Hatırla
+                                        </label>
+                                    </div>
+                                    <a href="#" class="forgot-pass">Parolayı Unuttum</a>
+                                </div> *@
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary btn-block enter-btn">Kayıt Ol</button>
+                                </div>
+                                <div class="d-flex">
+                                    @* <button class="btn btn-facebook col mr-2">
+                                        <i class="mdi mdi-facebook"></i> Facebook
+                                    </button>
+                                    <button class="btn btn-google col">
+                                        <i class="mdi mdi-google-plus"></i> Google plus
+                                    </button> *@
+                                </div>
+                                <p class="sign-up text-center">Zaten bir hesaba sahip misin?<a asp-controller="Login" asp-action="Index"> Giriş Yap</a></p>
+                                <p class="terms">Bir hesap oluşturarak şartlarımızı kabul etmiş olursunuz.<a href="#"> Şartlar ve Koşullar</a></p>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- content-wrapper ends -->
+            </div>
+            <!-- row ends -->
+        </div>
+        <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/js/off-canvas.js"></script>
+    <script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/js/hoverable-collapse.js"></script>
+    <script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/js/misc.js"></script>
+    <script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/js/settings.js"></script>
+    <script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/js/todolist.js"></script>
+    <!-- endinject -->
+</body>
+</html>

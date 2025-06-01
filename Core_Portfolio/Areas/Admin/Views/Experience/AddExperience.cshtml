@@ -1,0 +1,39 @@
+﻿@model EntityLayer.Concrete.Experience
+
+@{
+    ViewData["Title"] = "AddExperience";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Yeni Deneyim Ekle</h4>
+            <p class="card-description">Deneyim Ekleme Formu</p>
+
+            <form asp-area="Admin" asp-action="AddExperience" method="post" class="forms-sample">
+                <div class="form-group">
+                    <label asp-for="Name">Başlık</label>
+                    <input asp-for="Name" type="text" class="form-control" placeholder="Başlığı giriniz">
+                </div>
+                <div class="form-group">
+                    <label asp-for="Date">Tarih</label>
+                    <input asp-for="Date" type="text" class="form-control" placeholder="Tarihi giriniz">
+                </div>
+                <div class="form-group">
+                    <label asp-for="Description">Açıklama</label>
+                    <textarea asp-for="Description" type="text" class="form-control" placeholder="Açıklamayı giriniz" rows="4"></textarea>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ImageUrl">Resim Yolu</label>
+                    <input asp-for="ImageUrl" type="text" class="form-control" placeholder="Resim yolunu giriniz">
+                </div>
+
+
+                <button type="submit" class="btn btn-primary mr-2">Deneyim Ekle</button>
+                <button asp-area="Admin" asp-controller="Experience" asp-action="Index" class="btn btn-dark">İptal Et</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/vendors/js/vendor.bundle.base.js"></script>

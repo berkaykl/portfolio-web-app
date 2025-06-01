@@ -1,0 +1,35 @@
+﻿@model EntityLayer.Concrete.Feature
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Öne Çıkanlar Düzenleme Formu</h4>
+            @* <p class="card-description">Öne Çıkanlar Düzenleme Formu</p> *@
+
+            <form asp-controller="Feature" asp-action="Index" method="post" target="_blank" class="forms-sample">
+                <input type="hidden" asp-for="FeatureID" />
+
+                <div class="form-group">
+                    <label asp-for="Header">Başlık</label>
+                    <input asp-for="Header" type="text" class="form-control" placeholder="Başlığı giriniz">
+                </div>
+                <div class="form-group">
+                    <label asp-for="Name">Ad Soyad</label>
+                    <input asp-for="Name" type="text" class="form-control" placeholder="Ad soyad giriniz">
+                </div>
+                <div class="form-group">
+                    <label asp-for="Title">Meslek</label>
+                    <input asp-for="Title" type="text" class="form-control" placeholder="Meslek giriniz">
+                </div>
+
+
+                <button type="submit" class="btn btn-primary mr-2">Güncelle</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/vendors/js/vendor.bundle.base.js"></script>

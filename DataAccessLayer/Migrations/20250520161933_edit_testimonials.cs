@@ -1,0 +1,78 @@
+﻿using Microsoft.EntityFrameworkCore.Migrations;
+
+#nullable disable
+
+namespace DataAccessLayer.Migrations
+{
+    public partial class edit_testimonials : Migration
+    {
+        protected override void Up(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.AddColumn<int>(
+                name: "Id",
+                table: "Testimonials",
+                type: "int",
+                nullable: false,
+                defaultValue: 0);
+
+            migrationBuilder.AddColumn<string>(
+                name: "Name",
+                table: "Testimonials",
+                type: "nvarchar(max)",
+                nullable: false,
+                defaultValue: "");
+
+            migrationBuilder.AddColumn<string>(
+                name: "Surname",
+                table: "Testimonials",
+                type: "nvarchar(max)",
+                nullable: false,
+                defaultValue: "");
+
+            migrationBuilder.AddColumn<int>(
+                name: "WriterUserId",
+                table: "Testimonials",
+                type: "int",
+                nullable: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Testimonials_WriterUserId",
+                table: "Testimonials",
+                column: "WriterUserId");
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_Testimonials_AspNetUsers_WriterUserId",
+                table: "Testimonials",
+                column: "WriterUserId",
+                principalTable: "AspNetUsers",
+                principalColumn: "Id");
+        }
+
+        protected override void Down(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.DropForeignKey(
+                name: "FK_Testimonials_AspNetUsers_WriterUserId",
+                table: "Testimonials");
+
+            migrationBuilder.DropIndex(
+                name: "IX_Testimonials_WriterUserId",
+                table: "Testimonials");
+
+            migrationBuilder.DropColumn(
+                name: "Id",
+                table: "Testimonials");
+
+            migrationBuilder.DropColumn(
+                name: "Name",
+                table: "Testimonials");
+
+            migrationBuilder.DropColumn(
+                name: "Surname",
+                table: "Testimonials");
+
+            migrationBuilder.DropColumn(
+                name: "WriterUserId",
+                table: "Testimonials");
+        }
+    }
+}

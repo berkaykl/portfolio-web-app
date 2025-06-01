@@ -1,0 +1,77 @@
+﻿
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+
+<nav class="sidebar sidebar-offcanvas" id="sidebar">
+    @* <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
+        <a class="sidebar-brand brand-logo" href="sidebar sidebar-offcanvas/index.html"><img src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/images/logo.svg" alt="logo" /></a>
+        <a class="sidebar-brand brand-logo-mini" href="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/index.html"><img src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/images/logo-mini.svg" alt="logo" /></a>
+    </div> *@
+    <ul class="nav" style="padding-top: 15px;">
+        <li class="nav-item profile">
+            <div class="profile-desc">
+                <div class="profile-pic">
+                    <div class="count-indicator">
+                        <img class="img-xs rounded-circle " src="~/userimage/@ViewBag.Image" alt="">
+                        <span class="count bg-success"></span>
+                    </div>
+                    <div class="profile-name">
+                        <h5 class="mb-0 font-weight-normal">@ViewBag.Name</h5>
+                        <span>@ViewBag.Role</span>
+                    </div>
+                </div>
+
+            </div>
+        </li>
+        <li class="nav-item nav-category">
+            <span class="nav-link">Menü</span>
+        </li>
+
+        <li class="nav-item menu-items">
+            <a class="nav-link" asp-area="User" asp-controller="Default" asp-action="Index" target="_blank">
+                <span class="menu-icon">
+                    <i class="mdi mdi-home"></i>
+                </span>
+                <span class="menu-title">Portföy Sayfası</span>
+            </a>
+        </li>
+
+        <li class="nav-item menu-items">
+            <a class="nav-link" asp-area="User" asp-controller="Profile" asp-action="Index">
+                <span class="menu-icon">
+                    <i class="mdi mdi-account"></i>
+                </span>
+                <span class="menu-title">Profil</span>
+            </a>
+        </li>
+        <li class="nav-item menu-items">
+            <a class="nav-link" asp-area="User" asp-controller="Communication" asp-action="Index">
+                <span class="menu-icon">
+                    <i class="mdi mdi-phone"></i>
+                </span>
+                <span class="menu-title">İletişim</span>
+            </a>
+        </li>
+
+        <li class="nav-item menu-items">
+            <a class="nav-link" asp-area="User" asp-controller="Reference" asp-action="Index">
+                <span class="menu-icon">
+                    <i class="mdi mdi-account-plus"></i>
+                </span>
+                <span class="menu-title">Referans Ol</span>
+            </a>
+        </li>
+
+        @* <li class="nav-item menu-items">
+            <a class="nav-link" href="#">
+                <span class="menu-icon">
+                    <i class="mdi mdi-security"></i>
+                </span>
+                <span class="menu-title">Şifre ve Güvenlik</span>
+            </a>
+        </li> *@
+
+    </ul>
+</nav>

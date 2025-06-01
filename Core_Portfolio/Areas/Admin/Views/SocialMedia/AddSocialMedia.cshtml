@@ -1,0 +1,36 @@
+﻿@model EntityLayer.Concrete.SocialMedia
+
+@{
+    ViewData["Title"] = "AddSocialMedia";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Yeni Sosyal Medya Ekle</h4>
+            @* <p class="card-description">Deneyim Ekleme Formu</p> *@
+
+            <form asp-area="Admin" asp-action="AddSocialMedia" method="post" class="forms-sample">
+                <div class="form-group">
+                    <label asp-for="Name">Başlık</label>
+                    <input asp-for="Name" type="text" class="form-control" placeholder="Başlığı giriniz">
+                </div>
+                <div class="form-group">
+                    <label asp-for="Url">Url</label>
+                    <input asp-for="Url" type="text" class="form-control" placeholder="Url giriniz">
+                </div>
+                <div class="form-group">
+                    <label asp-for="Icon">İkon İsmi</label>
+                    <input asp-for="Icon" type="text" class="form-control" placeholder="İkon ismi giriniz">
+                </div>
+
+                <button type="submit" class="btn btn-primary mr-2">Sosyal Medya Ekle</button>
+                <button asp-area="Admin" asp-controller="SocialMedia" asp-action="Index" class="btn btn-dark">İptal Et</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/vendors/js/vendor.bundle.base.js"></script>
+
+

@@ -1,0 +1,31 @@
+﻿@model EntityLayer.Concrete.Service
+@{
+    ViewData["Title"] = "AddService";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Yeni Hizmet Ekle</h4>
+            @* <p class="card-description">Deneyim Ekleme Formu</p> *@
+
+            <form asp-area="Admin" asp-action="AddService" method="post" class="forms-sample">
+                <div class="form-group">
+                    <label asp-for="Title">Başlık</label>
+                    <input asp-for="Title" type="text" class="form-control" placeholder="Başlığı giriniz">
+                </div>
+                <div class="form-group">
+                    <label asp-for="ImageUrl">Resim Yolu</label>
+                    <input asp-for="ImageUrl" type="text" class="form-control" placeholder="Resim yolunu giriniz">
+                </div>
+
+
+                <button type="submit" class="btn btn-primary mr-2">Hizmet Ekle</button>
+                <button asp-area="Admin" asp-controller="Service" asp-action="Index" class="btn btn-dark">İptal Et</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/vendors/js/vendor.bundle.base.js"></script>
+

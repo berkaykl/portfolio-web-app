@@ -1,0 +1,30 @@
+﻿@model EntityLayer.Concrete.Skill
+
+@{
+    ViewData["Title"] = "AddSkill";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Yetenek Ekle</h4>
+
+            <form asp-controller="Skill" asp-action="AddSkill" method="post" class="forms-sample">
+
+                <div class="form-group">
+                    <label asp-for="Title">Başlık</label>
+                    <input asp-for="Title" type="text" class="form-control" placeholder="Yetenek başlığını giriniz">
+                </div>
+                <div class="form-group">
+                    <label asp-for="Value">Yetenek Oranı</label>
+                    <input asp-for="Value" type="text" class="form-control" placeholder="Yetenek oranını giriniz">
+                </div>
+               
+                <button type="submit" class="btn btn-primary mr-2">Yetenek Ekle</button>
+                <button asp-controller="Skill" asp-action="Index" class="btn btn-dark">İptal Et</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/vendors/js/vendor.bundle.base.js"></script>

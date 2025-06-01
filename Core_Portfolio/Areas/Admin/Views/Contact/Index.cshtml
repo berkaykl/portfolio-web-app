@@ -1,0 +1,41 @@
+﻿@model EntityLayer.Concrete.Contact
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">İletişim</h4>
+            <p class="card-description">İletişim alanı düzenleme formu</p>
+
+            <form asp-controller="Contact" asp-action="Index" method="post" target="_blank" class="forms-sample">
+                <input type="hidden" asp-for="ContactID" />
+
+                <div class="form-group">
+                    <label asp-for="Title">Başlık</label>
+                    <input asp-for="Title" type="text" class="form-control" placeholder="Başlık giriniz">
+                </div>
+                <div class="form-group">
+                    <label asp-for="Description">Açıklama</label>
+                    <textarea asp-for="Description" type="text" class="form-control" placeholder="Açıklama giriniz" rows="4"></textarea>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Mail">Mail</label>
+                    <input asp-for="Mail" type="text" class="form-control" placeholder="Mail giriniz">
+                </div>
+                <div class="form-group">
+                    <label asp-for="Phone">Okul</label>
+                    <input asp-for="Phone" type="text" class="form-control" placeholder="Telefon numarası giriniz">
+                </div>
+
+                <button type="submit" class="btn btn-primary mr-2">Güncelle</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/vendors/js/vendor.bundle.base.js"></script>
+
+
