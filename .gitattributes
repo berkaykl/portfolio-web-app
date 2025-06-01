@@ -61,3 +61,20 @@
 #*.PDF   diff=astextplain
 #*.rtf   diff=astextplain
 #*.RTF   diff=astextplain
+
+# C# dosyalarını dil analizine dahil et
+*.cs linguist-detectable=true
+
+# Razor dosyaları (genellikle ASP.NET Core'da kullanılır)
+*.cshtml linguist-detectable=true
+
+# HTML, CSS, JS dosyalarını dil analizinden çıkar
+*.html linguist-detectable=false
+*.css linguist-detectable=false
+*.js linguist-detectable=false
+
+# Binary ve log dosyalarını analiz dışı bırak
+*.dll linguist-detectable=false
+*.exe linguist-detectable=false
+*.log linguist-detectable=false
+
